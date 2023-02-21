@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/colorListFragment">
+
+    <fragment
+        android:id="@+id/colorListFragment"
+        android:name="com.example.recyclerviewnavigationfragments.ColorListFragment"
+        android:label="fragment_color_list"
+        tools:layout="@layout/fragment_color_list" >
+        <action
+            android:id="@+id/action_colorListFragment_to_helloFragment"
+            app:destination="@id/helloFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/helloFragment"
+        android:name="com.example.recyclerviewnavigationfragments.HelloFragment"
+        android:label="fragment_hello"
+        tools:layout="@layout/fragment_hello" >
+        <action
+            android:id="@+id/action_helloFragment_to_colorFragment"
+            app:destination="@id/colorFragment" />
+        <argument
+            android:name="colorName"
+            app:argType="string" />
+        <argument
+            android:name="colorValue"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/colorFragment"
+        android:name="com.example.recyclerviewnavigationfragments.ColorFragment"
+        android:label="fragment_color"
+        tools:layout="@layout/fragment_color" >
+        <action
+            android:id="@+id/action_colorFragment_to_colorListFragment"
+            app:destination="@id/colorListFragment" />
+        <argument
+            android:name="colorName"
+            app:argType="string" />
+        <argument
+            android:name="colorValue"
+            app:argType="integer" />
+    </fragment>
+</navigation>
